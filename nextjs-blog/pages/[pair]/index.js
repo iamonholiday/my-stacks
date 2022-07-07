@@ -9,7 +9,7 @@ export default function Pair() {
 
     return <div>
 
-        <h3>{pair}</h3>
+        <h3>1 level - {pair}</h3>
 
     </div>
 

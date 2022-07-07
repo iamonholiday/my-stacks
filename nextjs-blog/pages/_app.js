@@ -6,15 +6,17 @@ import '../styles/global.scss';
 
 // add bootstrap css
 import 'bootstrap/dist/css/bootstrap.css'
+import utilStyles from "../styles/utils.module.scss";
 // own css files here
 // import "../css/customcss.css";
 
 
 export default function MyApp({ Component, pageProps }) {
-    return (
+    return <>
 
         <Layout color={variables.primaryColor}>
             <Component {...pageProps} />
         </Layout>
-    )
+
+    </>
 }

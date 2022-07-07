@@ -24,8 +24,11 @@ export default function Navbar({navType = "horizontal"}) {
     return <nav className="nav">
 
         <Link className="nav-link active" aria-current="page" href={`/${magicLink}`}>{magicLink}</Link>
+        <Link className="nav-link active" aria-current="page" href={`/${magicLink}/form`}>Deep Form</Link>
+
         {/*<Link className="nav-link" href="#">Link</Link>*/}
         {/*<Link className="nav-link" href="#">Link</Link>*/}
-        {/*<Link className="nav-link disabled">Disabled</Link>zzzz*/}
+        {/*<Link className="nav-link disabled">Disabled</Link>*/}
+
     </nav>;
 }
