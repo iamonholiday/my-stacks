@@ -1,13 +1,31 @@
-export default function Navbar() {
-    return <section>
+import Link from "next/link";
+import {useEffect, useState} from "react";
 
-        <div>
-            menu 1
-        </div>
+export default function Navbar({navType = "horizontal"}) {
 
-        <div>
-            menu 2
-        </div>
+    const [magicLink, setMagicLink] = useState("magic")
 
-    </section>;
+    useEffect(() => {
+
+        setMagicLink(Math.random() * 100)
+    }, [])
+
+    if (navType === "vertical") {
+
+        return <nav className="nav">
+            <a className="nav-link active" aria-current="page" href="#">Active</a>
+            <a className="nav-link" href="#">Link</a>
+            <a className="nav-link" href="#">Link</a>
+            <a className="nav-link disabled">Disabled</a>
+        </nav>;
+    }
+
+
+    return <nav className="nav">
+
+        <Link className="nav-link active" aria-current="page" href={`/${magicLink}`}>{magicLink}</Link>
+        {/*<Link className="nav-link" href="#">Link</Link>*/}
+        {/*<Link className="nav-link" href="#">Link</Link>*/}
+        {/*<Link className="nav-link disabled">Disabled</Link>zzzz*/}
+    </nav>;
 }
