@@ -4,9 +4,6 @@ import utilStyles from '../styles/utils.module.scss';
 
 export default function Home() {
   return (
-      <Layout home>
-
-
-      </Layout>
+      <div>fff</div>
   );
 }
