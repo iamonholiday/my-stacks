@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from './layout.module.scss';
-import utilStyles from '../styles/utils.module.scss';
+import utilStyles from '../../styles/utils.module.scss';
 import Link from 'next/link';
 import Navbar from "./navbar";
 import Footer from "./footer";
@@ -75,25 +75,8 @@ export default function Layout({ children, home }) {
                     )}
                 </header>
             </div>
-            <div id={styles["main-area"]}>
 
-                <main>{children}</main>
-            </div>
-            <div id={styles["ads-area"]}>
-
-                {!home && (
-                    <div className={styles.backToHome}>
-                        <Link href="/">
-                            <a>← Back to home</a>
-                        </Link>
-                    </div>
-                )}
-            </div>
-            <div id={styles["bottom-area"]}>
-
-                <Footer />
-            </div>
-
+            {children}
 
         </div>
     </>;

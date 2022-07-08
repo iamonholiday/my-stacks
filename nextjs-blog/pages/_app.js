@@ -1,6 +1,6 @@
 // pages/_app.js
 import variables from '../styles/variables.module.scss'
-import Layout from "../components/layout";
+import Layout from "../components/shares/layout";
 import '../styles/global.scss';
 // import bootstrap from 'bootstrap';
 
@@ -9,14 +9,14 @@ import 'bootstrap/dist/css/bootstrap.css'
 import utilStyles from "../styles/utils.module.scss";
 // own css files here
 // import "../css/customcss.css";
-
+import { OpenAPIProvider } from 'react-openapi-client'
 
 export default function MyApp({ Component, pageProps }) {
     return <>
-
-        <Layout color={variables.primaryColor}>
-            <Component {...pageProps} />
-        </Layout>
-
+        <OpenAPIProvider definition="https://petstore.swagger.io/v2/swagger.json">
+            <Layout color={variables.primaryColor}>
+                <Component {...pageProps} />
+            </Layout>
+        </OpenAPIProvider>
     </>
 }
