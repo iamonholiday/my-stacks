@@ -1,0 +1,25 @@
+.block {
+
+  width: 100px;
+  height: 60px;
+  color: white;
+  background-color: grey;
+  display: flex;
+  text-align: left;
+  align-items: center;
+  // border: solid 1px red;
+}
+
+.active {
+
+  background-color: dodgerblue !important;
+}
+
+.layout {
+
+  display: flex;
+  flex-wrap: wrap;
+  width:100%;
+  align-items: center;
+
+}
