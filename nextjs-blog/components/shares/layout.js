@@ -7,6 +7,8 @@ import Navbar from "./navbar";
 import Footer from "./footer";
 import PageHeader from "./page-header";
 import {BlockArea} from "../block-area";
+import BlockLayout from "./block-layout";
+import PropTypes from "prop-types";
 
 
 const name = 'Your Name';
@@ -14,7 +16,7 @@ export const siteTitle = 'Next.js Sample Website';
 
 
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, home, layout = 'layoutDefault' }) {
     return <>
 
         <Head>
@@ -33,18 +35,18 @@ export default function Layout({ children, home }) {
             <meta name="twitter:card" content="summary_large_image" />
         </Head>
 
-        <div className={styles['g-container']}>
-
-
-            {/*<div id={styles["head-area"]}>*/}
-
-
-
-
-            {/*</div>*/}
+        <div className={styles[layout]}>
 
             {children}
 
         </div>
     </>;
 }
+
+Layout.propTypes = {
+
+    layout : PropTypes.oneOf([
+        'layoutProfileCenter',
+        'layoutDefault',
+    ]).isRequired
+};

@@ -14,46 +14,8 @@ export const BlockArea = ({children, blockType, placeType = 'default'}) => {
 
         defaultBlock = <>
             <Navbar />
-            <header>
+            <PageHeader />
 
-                {
-                    <PageHeader />
-                }
-
-                {/* {home ? (
-                        <>
-                            <Image
-                                priority
-                                src="/images/img.png"
-                                className={utilStyles.borderCircle}
-                                height={144}
-                                width={144}
-                                alt={name}
-                            />
-                            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-                        </>
-                    ) : (
-                        <>
-                            <Link href="/">
-                                <a>
-                                    <Image
-                                        priority
-                                        src="/images/img.png"
-                                        className={utilStyles.borderCircle}
-                                        height={108}
-                                        width={108}
-                                        alt={name}
-                                    />
-                                </a>
-                            </Link>
-                            <h2 className={utilStyles.headingLg}>
-                                <Link href="/">
-                                    <a className={utilStyles.colorInherit}>{name}</a>
-                                </Link>
-                            </h2>
-                        </>
-                    )}*/}
-            </header>
         </>
     } else if (blockType === 'ads-area'){
 
@@ -65,11 +27,12 @@ export const BlockArea = ({children, blockType, placeType = 'default'}) => {
         defaultBlock = <>
             <Footer />
         </>
+    } else if (children) {
+
+        defaultBlock = children
     } else {
 
-        defaultBlock = <>
-
-        </>
+        defaultBlock = <></>
     }
 
 

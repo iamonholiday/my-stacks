@@ -11,12 +11,13 @@ import utilStyles from "../styles/utils.module.scss";
 // import "../css/customcss.css";
 import { OpenAPIProvider } from 'react-openapi-client'
 
+
 export default function MyApp({ Component, pageProps }) {
     return <>
         <OpenAPIProvider definition="https://petstore.swagger.io/v2/swagger.json">
-            <Layout color={variables.primaryColor}>
-                <Component {...pageProps} />
-            </Layout>
+
+            <Component {...pageProps} />
+
         </OpenAPIProvider>
     </>
 }

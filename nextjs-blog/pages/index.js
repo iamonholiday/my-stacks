@@ -1,15 +1,12 @@
 import Charts from "../components/charts";
-import styles from "../components/shares/layout.module.scss";
-import Footer from "../components/shares/footer";
 import RecentSignal from "../components/recent-signal";
 import PairListMenu from "../components/pair-list-menu";
-import Navbar from "../components/shares/navbar";
-import PageHeader from "../components/shares/page-header";
 import {BlockArea} from "../components/block-area";
+import Layout from "../components/shares/layout";
 
-export default function Home() {
+export default function Home({layout = 'layoutProfileCenter'}) {
 
-  return <>
+  return <Layout layout={'layoutProfileCenter'}>
 
     <BlockArea blockType={"main-area"} placeType={'replace'}>
 
@@ -24,11 +21,9 @@ export default function Home() {
 
     </BlockArea>
 
-
     <BlockArea blockType={"head-area"} placeType={"bottom"}>
 
       <PairListMenu />
     </BlockArea>
-
-  </>
+  </Layout>
 }

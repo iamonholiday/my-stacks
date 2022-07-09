@@ -40,7 +40,7 @@ export default function PairListMenu({}) {
             pairData?.listOfPairs?.map(ie => {
 
                 // eg. /profile/${pair}
-                const linkToProfile = `/profile/${ie}`
+                const linkToProfile = `/forex-profile/${ie}`
 
                 return <BlockMenu pair={ie}
                                   isActive={activePair === ie}
