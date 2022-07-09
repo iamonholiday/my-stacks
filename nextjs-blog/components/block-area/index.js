@@ -3,13 +3,14 @@ import styles from "../shares/layout.module.scss";
 import Navbar from "../shares/navbar";
 import PageHeader from "../shares/page-header";
 import Footer from "../shares/footer";
+import Ads from "../ads";
 
 export const BlockArea = ({children, blockType, placeType = 'default'}) => {
 
 
     let defaultBlock
 
-    if (placeType === 'default' && blockType === 'head-area') {
+    if (blockType === 'head-area') {
 
         defaultBlock = <>
             <Navbar />
@@ -54,15 +55,20 @@ export const BlockArea = ({children, blockType, placeType = 'default'}) => {
                     )}*/}
             </header>
         </>
-    } else if (placeType === 'default' && blockType === 'ads-area'){
+    } else if (blockType === 'ads-area'){
 
         defaultBlock = <>
-            <img src={'https://stepstraining.co/wp-content/uploads/2020/06/20200613_Google_Ads_VS_Facebook_Ads_Website.png'} />
+            <Ads />
         </>
-    } else if (placeType === 'default' && blockType === 'bottom-area'){
+    } else if (blockType === 'bottom-area'){
 
         defaultBlock = <>
             <Footer />
+        </>
+    } else {
+
+        defaultBlock = <>
+
         </>
     }
 

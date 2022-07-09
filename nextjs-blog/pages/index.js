@@ -16,16 +16,16 @@ export default function Home() {
       <Charts />
     </BlockArea>
 
-    <BlockArea blockType={"ads-area"} >ff</BlockArea>
+    <BlockArea blockType={"ads-area"} />
 
-    <BlockArea blockType={"bottom-area"}>
+    <BlockArea blockType={"bottom-area"} placeType={"top"}>
 
       <RecentSignal pair={'eurusd'} />
 
     </BlockArea>
 
 
-    <BlockArea blockType={"head-area"}>
+    <BlockArea blockType={"head-area"} placeType={"bottom"}>
 
       <PairListMenu />
     </BlockArea>
