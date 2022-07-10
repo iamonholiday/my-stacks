@@ -1,41 +1,114 @@
 import { Chart, CategoryScale } from 'chart.js/auto'
-import { Bar }            from 'react-chartjs-2'
+import { Line }            from 'react-chartjs-2'
 import {useEffect} from "react";
 
+const options = {
+    "title": {
+        "display": false,
+        "text": "eurusd",
+        "position": "bottom",
+        "fullWidth": true,
+        "fontColor": "#aa7942",
+        "fontSize": 16
+    },
+    "legend": {
+        "display": true,
+        "fullWidth": true,
+        "position": "top"
+    },
+    "scales": {
+        "yAxes": [
+            {
+                "ticks": {
+                    "beginAtZero": true,
+                    "display": true
+                },
+                "gridLines": {
+                    "display": true,
+                    "lineWidth": 2,
+                    "drawOnChartArea": true,
+                    "drawTicks": true,
+                    "tickMarkLength": 1,
+                    "offsetGridLines": true,
+                    "zeroLineColor": "#942192",
+                    "color": "#d6d6d6",
+                    "zeroLineWidth": 2
+                },
+                "scaleLabel": {
+                    "display": true,
+                    "labelString": "USD in Millions"
+                },
+                "display": true
+            }
+        ],
+        "xAxes": {
+            "0": {
+                "ticks": {
+                    "display": true,
+                    "fontSize": 14,
+                    "fontStyle": "italic"
+                },
+                "display": true,
+                "gridLines": {
+                    "display": true,
+                    "lineWidth": 2,
+                    "drawOnChartArea": false,
+                    "drawTicks": true,
+                    "tickMarkLength": 12,
+                    "zeroLineWidth": 2,
+                    "offsetGridLines": true,
+                    "color": "#942192",
+                    "zeroLineColor": "#942192"
+                },
+                "scaleLabel": {
+                    "fontSize": 16,
+                    "display": true,
+                    "fontStyle": "normal"
+                }
+            }
+        }
+    },
+    "tooltips": {
+        "enabled": true,
+        "mode": "label",
+        "caretSize": 10,
+        "backgroundColor": "#00fa92"
+    }
+};
 
 
 const data = {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-    datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
-        ],
-        borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-        ],
-        borderWidth: 1
-    }]
-}
+    "labels": [
+        "2000-01-03",
+        "2000-01-04",
+        "2000-01-05",
+        "2000-01-06",
+        "2000-01-07",
+        "2000-01-08"
+    ],
+    "datasets": [
+        {
+            "label": "2014",
+            "backgroundColor": "#aaadff",
+            "fill": true,
+            "data": [
+                "230",
+                "250",
+                "260",
+                "240",
+                "280",
+                "270"
+            ],
+            "borderColor": "#ffffff",
+            "borderWidth": "1"
+        }
+    ]
+};
 
 export default function Charts({pair, showTitle}) {
 
     useEffect(() => {
 
-        // Chart.register(
-        //     CategoryScale,
-        // )
 
     }, [])
 
@@ -43,13 +116,11 @@ export default function Charts({pair, showTitle}) {
     return (
         <div>
             <h2>{displayName}</h2>
-            <Bar
+            <Line
                 data={data}
                 width={400}
                 height={200}
-                options={{
-                    maintainAspectRatio: true
-                }}
+                options={options}
             />
         </div>
     );
