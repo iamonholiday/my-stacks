@@ -2,6 +2,7 @@
 import variables from '../styles/variables.module.scss'
 import Layout from "../components/shares/layout";
 import '../styles/global.scss';
+// import "../styles/layout.scss"
 // import bootstrap from 'bootstrap';
 
 // add bootstrap css

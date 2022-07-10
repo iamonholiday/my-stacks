@@ -7,35 +7,36 @@ import PairListMenu from "../../components/pair-list-menu";
 import Layout from "../../components/shares/layout";
 
 
-const Pair = ({}) => <Layout layout={'layoutProfileCenter'}>
+const Pair = ({}) => <Layout layout={'layout-profile-center'}>
 
-    <BlockArea blockType={"main-area"} placeType={'replace'}>
+        <BlockArea blockType={"main-area"} placeType={'replace'}>
 
-        <Charts />
-    </BlockArea>
+            <Charts />
+        </BlockArea>
 
-    {/*<BlockArea blockType={"ads-area"} />*/}
+        {/*<BlockArea blockType={"ads-area"} />*/}
 
-    <BlockArea blockType={"ads-left-area"}>
+        <BlockArea blockType={"ads-left-area"}>
 
-        left
-    </BlockArea>
+            left
+        </BlockArea>
 
-    <BlockArea blockType={"ads-right-area"}>
+        <BlockArea blockType={"ads-right-area"}>
 
-        right
-    </BlockArea>
+            right
+        </BlockArea>
 
-    <BlockArea blockType={"bottom-area"} placeType={"top"}>
+        <BlockArea blockType={"head-area"} placeType={"bottom"}>
 
-        <RecentSignal pair={'eurusd'} />
-    </BlockArea>
+            <PairListMenu />
+        </BlockArea>
 
+        <BlockArea blockType={"extended-area"}>
 
-    <BlockArea blockType={"head-area"} placeType={"bottom"}>
+            <RecentSignal pair={'eurusd'} />
+        </BlockArea>
 
-        <PairListMenu />
-    </BlockArea>
+        <BlockArea blockType={"footer-area"} />
 
     </Layout>
 

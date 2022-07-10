@@ -1,13 +1,4 @@
 import Head from 'next/head';
-import Image from 'next/image';
-import styles from './layout.module.scss';
-import utilStyles from '../../styles/utils.module.scss';
-import Link from 'next/link';
-import Navbar from "./navbar";
-import Footer from "./footer";
-import PageHeader from "./page-header";
-import {BlockArea} from "../block-area";
-import BlockLayout from "./block-layout";
 import PropTypes from "prop-types";
 
 
@@ -35,7 +26,7 @@ export default function Layout({ children, home, layout = 'layoutDefault' }) {
             <meta name="twitter:card" content="summary_large_image" />
         </Head>
 
-        <div className={styles[layout]}>
+        <div className={layout}>
 
             {children}
 

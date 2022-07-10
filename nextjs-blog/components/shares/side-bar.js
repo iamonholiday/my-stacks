@@ -1,17 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
-const BlockLayout = ({}) => {
+const SideBar = ({}) => {
     return (
         <div>
-
+            Side Bar
         </div>
     );
 };
 
-BlockLayout.propTypes = {
+SideBar.propTypes = {
 
 };
 
-export default BlockLayout;
+export default SideBar;

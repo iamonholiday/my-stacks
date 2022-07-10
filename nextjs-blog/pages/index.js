@@ -6,24 +6,33 @@ import Layout from "../components/shares/layout";
 
 export default function Home({layout = 'layoutProfileCenter'}) {
 
-  return <Layout layout={'layoutProfileCenter'}>
+  return <Layout layout={'layout-default'}>
 
-    <BlockArea blockType={"main-area"} placeType={'replace'}>
+    <BlockArea blockType={"page-main-area"} placeType={'replace'}>
 
       <Charts />
     </BlockArea>
 
-    <BlockArea blockType={"ads-area"} />
+    {/*<BlockArea blockType={"ads-area"} />*/}
 
-    <BlockArea blockType={"bottom-area"} placeType={"top"}>
+    <BlockArea blockType={"page-sidebar-area"}>
 
-      <RecentSignal pair={'eurusd'} />
-
+      left
     </BlockArea>
 
-    <BlockArea blockType={"head-area"} placeType={"bottom"}>
+    <BlockArea blockType={"page-ads-area"} />
+
+    <BlockArea blockType={"page-header-area"} placeType={"bottom"}>
 
       <PairListMenu />
     </BlockArea>
+
+    <BlockArea blockType={"page-extended-area"}>
+
+      <RecentSignal pair={'eurusd'} />
+    </BlockArea>
+
+    <BlockArea blockType={"page-footer-area"} />
+
   </Layout>
 }

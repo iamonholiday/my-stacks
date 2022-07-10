@@ -8,14 +8,11 @@
 
   background-color: grey;
   padding:10px;
-  width: 100px;
+  min-width: 100px;
+  max-width: 100px;
   height: 100px;
   text-align: center;
-
-  .block:not(:last-of-type) {
-
-    margin-left: 10px;
-  }
+  flex: 1;
 }
 
 .layout {
@@ -23,6 +20,7 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  gap: .5rem;
   justify-content: flex-start;
   align-items: flex-start;
 }

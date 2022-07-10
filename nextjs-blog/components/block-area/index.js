@@ -1,32 +1,44 @@
 import PropTypes from 'prop-types';
-import styles from "../shares/layout.module.scss";
 import Navbar from "../shares/navbar";
 import PageHeader from "../shares/page-header";
-import Footer from "../shares/footer";
+import PageFooter from "../shares/page-footer";
 import Ads from "../ads";
+import SideBar from "../shares/side-bar";
 
 export const BlockArea = ({children, blockType, placeType = 'default'}) => {
 
-
     let defaultBlock
+    let wrapperType
 
-    if (blockType === 'head-area') {
+    if (blockType.indexOf("head-") > -1) {
 
-        defaultBlock = <>
-            <Navbar />
-            <PageHeader />
+        wrapperType = "head"
+    } else if (blockType.indexOf("nav-") > -1) {
 
-        </>
-    } else if (blockType === 'ads-area'){
+        wrapperType = "nav"
+    } else if (blockType.indexOf("footer-") > -1) {
 
-        defaultBlock = <>
-            <Ads />
-        </>
-    } else if (blockType === 'bottom-area'){
+        wrapperType = "footer"
+    } else {
 
-        defaultBlock = <>
-            <Footer />
-        </>
+        wrapperType = "section"
+    }
+
+    if (blockType === 'page-header-area') {
+
+        defaultBlock = <PageHeader />
+    } else if (blockType === 'page-ads-area'){
+
+        defaultBlock = <Ads />
+    } else if (blockType === 'page-footer-area'){
+
+        defaultBlock = <PageFooter />
+    } else if (blockType === 'page-navbar-area') {
+
+        defaultBlock = <Navbar />
+    } else if (blockType === 'page-sidebar-area') {
+
+        defaultBlock = <SideBar />
     } else if (children) {
 
         defaultBlock = children
@@ -35,33 +47,42 @@ export const BlockArea = ({children, blockType, placeType = 'default'}) => {
         defaultBlock = <></>
     }
 
+    if (wrapperType === "header") {
 
-    if (placeType === 'replace') {
+        return <header className={blockType}>
+            { placeType === 'top' && children }
+            { defaultBlock }
+            { placeType === 'bottom' && children }
+        </header>
+    } else if (wrapperType === "footer") {
 
-        return <div id={styles[blockType]}>
-            {children}
-        </div>
-    } else if (placeType === 'default' && defaultBlock) {
+        return <footer className={blockType}>
+            { placeType === 'top' && children }
+            { defaultBlock }
+            { placeType === 'bottom' && children }
+        </footer>
+    } else {
 
-        return <div id={styles[blockType]}>{defaultBlock}</div>
+        return <section className={blockType}>
+            { placeType === 'top' && children }
+            { defaultBlock }
+            { placeType === 'bottom' && children }
+        </section>
     }
-
-
-    return <div id={styles[blockType]}>
-        { placeType === 'top' && children }
-        { defaultBlock }
-        { placeType === 'bottom' && children }
-    </div>
 }
 
 BlockArea.propTypes = {
 
     blockType : PropTypes.oneOf([
-        'main',
-        'header',
-        'head-area',
-        'bottom-area',
-        'ads-area'
+        'page-footer-area',
+        'page-extended-area',
+        'page-header-area',
+        'page-nav-area',
+        'page-main-area',
+
+        'page-ads-area',
+        'page-sidebar-area',
+
     ]).isRequired,
 
     placeType: PropTypes.oneOf([
