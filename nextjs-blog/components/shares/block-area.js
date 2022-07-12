@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
-import Navbar from "../shares/navbar";
-import PageHeader from "../shares/page-header";
-import PageFooter from "../shares/page-footer";
+import Navbar from "./navbar";
+import PageHeader from "./page-header";
+import PageFooter from "./page-footer";
 import Ads from "../ads";
-import SideBar from "../shares/side-bar";
+import SideBar from "./side-bar";
 
 export const BlockArea = ({children, blockType, placeType = 'default'}) => {
 

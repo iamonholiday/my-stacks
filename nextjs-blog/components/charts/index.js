@@ -105,14 +105,14 @@ const data = {
     ]
 };
 
-export default function Charts({pair, showTitle}) {
+export default function Charts({pair = 'eurusd', showTitle}) {
 
     useEffect(() => {
 
 
     }, [])
 
-    const displayName = 'EUR/USD binary signal'
+    const displayName = `${pair}`
     return (
         <div>
             <h2>{displayName}</h2>

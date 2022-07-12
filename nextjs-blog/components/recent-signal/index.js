@@ -42,8 +42,8 @@ export default function RecentSignal({pair}) {
 
                 recentSignalData?.listOfSlotTimeFmts?.map(ie => {
 
-                    // eg. /past-performance/${pair}/${dateTimeFmt}
-                    const iLinkToSignalPrevPerformance = `/past-performance/${encodeURIComponent(pair)}/${encodeURIComponent(ie)}`
+                    // eg. /[instrument]-performance/${pair}/${dateTimeFmt}
+                    const iLinkToSignalPrevPerformance = `/forex-profile/performance/${encodeURIComponent(pair)}?t=${encodeURIComponent(ie)}`
                     const iHasLink = recentSignalData.listOfSignals.indexOf(ie) > -1
 
                     return <BlockSlot

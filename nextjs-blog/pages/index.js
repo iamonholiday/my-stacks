@@ -1,10 +1,10 @@
 import Charts from "../components/charts";
 import RecentSignal from "../components/recent-signal";
 import PairListMenu from "../components/pair-list-menu";
-import {BlockArea} from "../components/block-area";
+import {BlockArea} from "../components/shares/block-area";
 import Layout from "../components/shares/layout";
 
-export default function Home({layout = 'layoutProfileCenter'}) {
+export default function Home({layout = 'layout-profile-center'}) {
 
   return <Layout layout={'layout-default'}>
 

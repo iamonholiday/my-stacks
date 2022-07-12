@@ -22,7 +22,7 @@ function BlockMenu({pair, link, isActive}) {
     </div>
 }
 
-export default function PairListMenu({}) {
+export default function PairListMenu({activePair}) {
 
     let { pairLoading, pairData, pairError} = {
         pairLoading: false,
@@ -31,8 +31,6 @@ export default function PairListMenu({}) {
         },
         pairError: false
     }
-
-    const activePair = 'eurusd' // Implement context.
 
     return <div className={style.layout}>
 

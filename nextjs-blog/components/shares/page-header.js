@@ -7,7 +7,7 @@ function BlockLogo ({}) {
 
     return <div className={blockClass}>
 
-        <span>Binary Signal</span>
+        <Link href={"/"}>Binary Signal</Link>
     </div>
 }
 
@@ -32,13 +32,16 @@ export default function PageHeader({}) {
     let listOfMenuObjects
     if (hasAuth) {
         listOfMenuObjects = [
-            {href: "/profile/eurusd", text: "Login", icon: style.iconLogin},
-            {href: "/profile/eurusd", text: "Premium", icon: "xxx"},
+            {href: "/user-profile", text: "My Account", icon: style.iconLogin},
+            {href: "/purchase", text: "Premium", icon: style.iconLogin},
+            {href: "/auth/logout", text: "Logout", icon: "xxx"},
         ]
     } else {
         listOfMenuObjects = [
-            {href: "/profile/eurusd", text: "Login", icon: style.iconLogin},
-            {href: "/profile/eurusd", text: "Premium", icon: "xxx"},
+            {href: "/auth/sign-up", text: "Sign Up", icon: style.iconLogin},
+            {href: "/auth/login", text: "Log In", icon: style.iconLogin},
+            {href: "/purchase", text: "Premium", icon: style.iconLogin},
+            {href: "/auth/logout", text: "Logout", icon: "xxx"},
         ]
     }
 
