@@ -64,7 +64,7 @@ export const PurchaseOrderActionBlockFlex = styled(BlockFlex)`
 
 
 
-const Order = ({}) => {
+const Checkout = ({}) => {
 
     const {
         data : orderData
@@ -286,8 +286,8 @@ const Order = ({}) => {
     );
 };
 
-Order.propTypes = {
+Checkout.propTypes = {
 
 };
 
-export default Order;
+export default Checkout;
